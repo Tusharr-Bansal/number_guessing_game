@@ -1,0 +1,31 @@
+camper: /number_guessing_game$ ./number_guess.sh 
+Enter your username:
+supriya
+Welcome, supriya! It looks like this is your first time here.
+INSERT 0 1
+Guess the secret number between 1 and 1000:
+22
+It's higher than that, guess again:
+500
+It's lower than that, guess again:
+100
+It's higher than that, guess again:
+300
+It's lower than that, guess again:
+200
+It's lower than that, guess again:
+150
+It's higher than that, guess again:
+175
+It's lower than that, guess again:
+163
+It's lower than that, guess again:
+158
+It's lower than that, guess again:
+154
+It's higher than that, guess again:
+156
+It's higher than that, guess again:
+157
+You guessed it in 12 tries. The secret number was 157. Nice job!
+INSERT 0 1
