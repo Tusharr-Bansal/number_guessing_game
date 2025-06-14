@@ -9,7 +9,7 @@ read USERNAME
 USER_ID=$($PSQL "SELECT user_id FROM users WHERE username='$USERNAME'")
 if [[ -z $USER_ID ]]; then
   echo "Welcome, $USERNAME! It looks like this is your first time here."
-  $PSQL "INSERT INTO users(username) VALUES('$USERNAME')"
+  $PSQL "INSERT INTO users(username) VALUES('$USERNAME')" > /dev/null
   USER_ID=$($PSQL "SELECT user_id FROM users WHERE username='$USERNAME'")
 else
   GAMES_PLAYED=$($PSQL "SELECT COUNT(*) FROM games WHERE user_id=$USER_ID")
@@ -32,7 +32,7 @@ while true; do
     echo "It's lower than that, guess again:"
   else
     echo "You guessed it in $NUMBER_OF_GUESSES tries. The secret number was $SECRET. Nice job!"
-    $PSQL "INSERT INTO games(user_id, guesses) VALUES($USER_ID, $NUMBER_OF_GUESSES)"
+    $PSQL "INSERT INTO games(user_id, guesses) VALUES($USER_ID, $NUMBER_OF_GUESSES)" > /dev/null
     break
   fi
 done
